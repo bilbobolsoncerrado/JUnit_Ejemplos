@@ -1,21 +1,22 @@
 package test;
 
 import principal.Employee;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Test;
 
-import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 
 
 public class EmployeeTest {
 
     private Employee employee;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         // Create an instance of Employee before each test
-     //   employee = new Employee(1L, "John Doe", 25);
+        employee = new Employee(1L, "John Doe", 25);
     }
 
     @Test
@@ -66,5 +67,9 @@ public class EmployeeTest {
         assertEquals(25, employee.getAge().intValue());
     }
 
-  
+    @AfterEach
+    public void close()
+    {
+    		employee=null;    
+    }
 }
