@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
 
-public class EmployeeTest {
+public class TestEmployee {
 
     private Employee employee;
 
@@ -18,12 +18,13 @@ public class EmployeeTest {
         // Create an instance of Employee before each test
         employee = new Employee(1L, "John Doe", 25);
     }
-
     @Test
     public void testGetId() {
         assertEquals(1L, employee.getId().longValue());
     }
 
+    
+    
     @Test
     public void testSetId() {
         employee.setId(2L);
